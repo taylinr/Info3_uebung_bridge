@@ -1,8 +1,8 @@
 public interface Abspieler {
 
-    void spieleTrack();
+    void spieleTrack(int trackZahl);
 
-    String leseDaten();
+    void leseDaten(AbspielDaten daten);
 
     void ausschalten();
 

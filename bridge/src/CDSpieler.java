@@ -1,21 +1,28 @@
+import java.util.ArrayList;
+
 public class CDSpieler implements Abspieler {
 
-    private AbspielDaten daten;
+    private ArrayList<AbspielDaten> abspielDatenListe;
 
-    public CDSpieler(AbspielDaten daten){
-        this.daten = daten;
+    public CDSpieler(){
+        this.abspielDatenListe = new ArrayList<>();
     }
 
-    public void spieleTrack(){
-        System.out.println(leseDaten());
+    public void spieleTrack(int trackZahl){
+            System.out.println(this.getClass().getSimpleName() + " spiele Track " + trackZahl + " ab:" + abspielDatenListe.get(trackZahl - 1).toString());
     }
 
-    public String leseDaten(){
-        String datenString = daten.toString();
-        return datenString;
+    public void leseDaten(AbspielDaten daten){
+
+        abspielDatenListe.add(daten);
+
+        System.out.println(this.getClass().getSimpleName() + " Daten von " + daten.toString() + " eingelesen.");
+
+
     }
 
     public void ausschalten(){
-        System.out.println("ausgeschaltet.");
+    	this.abspielDatenListe = null;
+        System.out.println(this.getClass().getSimpleName() + " ausgeschaltet.");
     }
 }

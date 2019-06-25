@@ -1,4 +1,4 @@
-public class AbspielGeraet {
+abstract class AbspielGeraet {
 
     public Abspieler abspieler;
 
@@ -6,10 +6,6 @@ public class AbspielGeraet {
         this.abspieler = abspieler;
     }
 
-    public void spieleAb(){
-        String daten = abspieler.leseDaten();
-
-        System.out.println(daten);
-    }
+    public abstract void spieleAb();
 
 }
